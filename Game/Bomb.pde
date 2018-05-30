@@ -2,6 +2,7 @@ class Bomb{
   float xcor,ycor; 
   final static float A = 0;
   final static float C = 1;
+  final static float F = 1.25;
   float state; 
   color c;
   public Bomb(float x, float y ){
@@ -15,12 +16,15 @@ class Bomb{
        fill(c);
        ellipse(xcor,ycor,30,30);
        state += .01;
-     } else if (state == C){
+     } else if (state < F){
        explode();
+       state += .01;
+     }else {
      }
   }
   void explode(){
-    fill(c);
-    rect(xcor,ycor,30,30);
+    fill(255,0,0);
+    rect(xcor - 50,ycor - 15,100,30);
+    
   }
   }

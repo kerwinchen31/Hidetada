@@ -19,16 +19,19 @@ void draw() {
   }
   for(int x = 0; x < numbombs; x++){
      bombs[x].update(); 
+     num += 1;
+     
   }
 }
 void keyPressed(){
-  if(key == 'w') players[0].ycor -= 10; 
-  if(key == 's') players[0].ycor += 10;
-  if(key == 'd') players[0].xcor += 10;
-  if(key == 'a') players[0].xcor -= 10;
-  if(key == 'f' && num == 1){
+  if(key == 'w') players[0].ycor -= 60; 
+  if(key == 's') players[0].ycor += 60;
+  if(key == 'd') players[0].xcor += 60;
+  if(key == 'a') players[0].xcor -= 60;
+  if(key == 'f' && num > 0){
      bombs[numbombs] = new Bomb(players[0].xcor,players[0].ycor);
      numbombs += 1;
      num -= 1;
+   
   }
 }

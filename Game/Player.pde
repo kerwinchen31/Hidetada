@@ -28,6 +28,8 @@ class Player{
     r = 60;
   }
   void check(Player[] players){
+   // for(int i = 0; i < players.length; i++){
+    //  if(players[i].xcor
   }
   void die(){
     lives -= 1;
