@@ -1,67 +1,76 @@
 class Player{
   float xcor,ycor,xorig,yorig;
   final static int ALIVE = 0;
-  final static int RESPAWN = 1;
-  final static int DEAD = 2;
-  int lives;
+  final static int DEAD = 1;
+  Bomb x;
+  int bombs;
+  int lives = 3;
   int state;
-  int r;
   color c;
-  public Player(){
-    lives = 3;
-    xcor = 0;
-    ycor = 0;
-    xorig = 0;
-    yorig = 0;
-    c = color(random(255),random(255),random(255));
-    state = ALIVE; 
-    r = 60;
-  }
-  public Player(float x, float y){
-    lives = 3;
+  public Player(float x,float y){
     xcor = x;
     ycor = y;
     xorig = x;
     yorig = y;
-    c = color(random(255),random(255),random(255));
-    state = ALIVE; 
-    r = 60;
+    state = ALIVE;
+    c = color(255,0,0);
+    bombs = 0;
   }
-  void check(Player[] players){
-   // for(int i = 0; i < players.length; i++){
-    //  if(players[i].xcor
-  }
-  void die(){
-    lives -= 1;
-    if(lives == 0){
-      state = DEAD;
-    } else {
-      state = RESPAWN;
-    }
-  }
-  void move(){
-    fill(c);
-    ellipse(xcor,ycor,60,60);
+  int getLife(){
+   return lives; 
   }
   void update(Player[] players){
+    check(players);
    if(state == ALIVE){
-     move();
-     check(players);
+      if(x != null) x.update();
+      fill(c);
+      ellipse(xcor,ycor,40,40);
    } 
-   else if (state == RESPAWN){
-     //goodbye();
-     //respawn();
-   }
-   else if(state == DEAD){
-      //goodbye(); 
-   }
+
   }
- /* void respawn(){
-   ellipse(xorig,yorig,60,60);
-   state = ALIVE;
+  
+  void check(Player[] players){
+    if( x != null && x.getDead() == false && x.getExplosion() == true ){
+    for(int i = 0; i < players.length; i++){
+       if((x.xcor == players[i].xcor) && (x.ycor == players[i].ycor) ){
+         players[i].lives -= 1;
+         state = DEAD;
+         fill(c);
+         ellipse(xorig,yorig,40,40);
+         xcor = xorig;
+         ycor = yorig;
+         state = ALIVE;
+       }
+    }
+    }
   }
-  void goodbye(){
-    r -= 10;
-    ellipse(xcor,ycor,r,r);
-  } */
+  void die(){
+    //delay(10000000);
+    state = ALIVE;
+  }
+  
+  
+  void dropbomb(){
+    if(bombs == 0) { 
+      x = new Bomb(xcor,ycor); 
+      bombs = 1; 
+    } else if( x.getDead() ){
+      x = new Bomb(xcor,ycor); 
+      bombs = 1;
+    }
+  } 
 }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,30 +1,41 @@
 class Bomb{
-  float xcor,ycor; 
-  final static float A = 0;
-  final static float C = 1;
-  final static float F = 1.25;
+  float xcor,ycor;
+  final static int A = 0;
+  final static int B = 1; 
   float state; 
-  color c;
-  public Bomb(float x, float y ){
+  color c; 
+  boolean dead = false;
+  boolean explosion = false;
+  public Bomb(float x, float y){
      xcor = x;
      ycor = y;
-     state = A; 
-     c = color(random(255), random(255), random(255));
+     state = A;
+     c = color(0,0,255);
+     dead = false; 
+     explosion = false; 
   }
   void update(){
-     if(state < C){
-       fill(c);
+     if(state < B){
+       fill(c); 
        ellipse(xcor,ycor,30,30);
-       state += .01;
-     } else if (state < F){
-       explode();
-       state += .01;
-     }else {
+       state += .025;
+       explosion = false;
+     } else if (state < 1.25) {
+       fill(c);
+       ellipse(xcor,ycor,180,180);
+       state += .025;
+       explosion = true;
+     } else {
+       dead = true; 
+       explosion = false;
      }
   }
-  void explode(){
-    fill(255,0,0);
-    rect(xcor - 50,ycor - 15,100,30);
-    
+  boolean getDead(){
+    return dead;
   }
+  boolean getExplosion(){
+    return explosion; 
   }
+  
+  
+}
