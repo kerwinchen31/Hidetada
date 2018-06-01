@@ -7,7 +7,8 @@ class Player{
   int lives = 3;
   int state;
   color c;
-  public Player(float x,float y,int c1, int c2, int c3){
+  int r;
+  public Player(float x,float y,int c1, int c2, int c3, int rad){
     xcor = x;
     ycor = y;
     xorig = x;
@@ -15,7 +16,9 @@ class Player{
     state = ALIVE;
     c = color(c1,c2,c3);
     bombs = 0;
+    r = rad;
   }
+  
   int getLife(){
    return lives; 
   }
@@ -24,13 +27,13 @@ class Player{
    if(state == ALIVE){
       if(x != null) x.update();
       fill(c);
-      ellipse(xcor,ycor,40,40);
+      ellipse(xcor,ycor,r,r);
    } 
 
   }
   void respawn(){
     fill(c);
-    ellipse(xorig,yorig,40,40);
+    ellipse(xorig,yorig,r,r);
     xcor = xorig;
     ycor = yorig;
     state = ALIVE;
