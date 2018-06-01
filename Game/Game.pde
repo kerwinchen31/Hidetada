@@ -1,10 +1,10 @@
 Player[] players = new Player[4];
 void setup() {
   size(600, 600);
-  players[0] = new Player(30,30);
-  players[1] = new Player(570,30);
-  players[2] = new Player(30,570);
-  players[3] = new Player(570,570);
+  players[0] = new Player(30,30,0,0,255);
+  players[1] = new Player(570,30,255,0,0);
+  players[2] = new Player(30,570,100,80,100);
+  players[3] = new Player(570,570,50,70,90);
 }
 
 void draw() {
@@ -25,32 +25,32 @@ void draw() {
   }
 }
 void keyPressed(){
-  if(key == 'w'){
+  if(key == 'w' && (players[0].ycor >= 90)){
     players[0].ycor -= 60; 
   }
-  if(key == 's'){
+  if(key == 's' && (players[0].ycor <= 510)){
     players[0].ycor += 60; 
   }
-  if(key =='a'){
+  if(key =='a' && (players[0].xcor >= 90)){
     players[0].xcor -= 60; 
   }
-  if(key == 'd'){
+  if(key == 'd' && (players[0].xcor <= 510)){
     players[0].xcor += 60; 
   }
   if(key == 'f'){
     players[0].dropbomb(); 
   }
  
-    if(key == 'i'){
+    if(key == 'i' && (players[1].ycor >= 90)){
     players[1].ycor -= 60; 
   }
-   if(key == 'k'){
+   if(key == 'k' && (players[1].ycor <= 510)){
     players[1].ycor += 60; 
   }
-  if(key == 'j'){
+  if(key == 'j' && (players[1].xcor >= 90)){
     players[1].xcor -= 60; 
   }
-  if(key == 'l'){
+  if(key == 'l' && (players[1].xcor <= 510)){
     players[1].xcor += 60; 
   }
   if(key == BACKSPACE){

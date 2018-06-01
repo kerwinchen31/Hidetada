@@ -7,13 +7,13 @@ class Player{
   int lives = 3;
   int state;
   color c;
-  public Player(float x,float y){
+  public Player(float x,float y,int c1, int c2, int c3){
     xcor = x;
     ycor = y;
     xorig = x;
     yorig = y;
     state = ALIVE;
-    c = color(255,0,0);
+    c = color(c1,c2,c3);
     bombs = 0;
   }
   int getLife(){
