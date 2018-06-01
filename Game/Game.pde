@@ -40,19 +40,21 @@ void keyPressed(){
   if(key == 'f'){
     players[0].dropbomb(); 
   }
-    if(key == 'o'){
+ 
+    if(key == 'i'){
     players[1].ycor -= 60; 
   }
-  if(key == 'l'){
+   if(key == 'k'){
     players[1].ycor += 60; 
   }
-  if(key =='k'){
+  if(key == 'j'){
     players[1].xcor -= 60; 
   }
-  if(key == ';'){
+  if(key == 'l'){
     players[1].xcor += 60; 
   }
-  if(key == 'u'){
+  if(key == BACKSPACE){
     players[1].dropbomb(); 
   }
+  
 }

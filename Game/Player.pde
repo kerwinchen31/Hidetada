@@ -28,25 +28,35 @@ class Player{
    } 
 
   }
-  
+  void respawn(){
+    fill(c);
+    ellipse(xorig,yorig,40,40);
+    xcor = xorig;
+    ycor = yorig;
+    state = ALIVE;
+  }
+
   void check(Player[] players){
     if( x != null && x.getDead() == false && x.getExplosion() == true ){
     for(int i = 0; i < players.length; i++){
-       if((x.xcor == players[i].xcor) && (x.ycor == players[i].ycor) ){
+       float distance = dist(x.xcor, x.ycor,players[i].xcor, players[i].ycor);
+       if(distance <= 90){
          players[i].lives -= 1;
-         state = DEAD;
-         fill(c);
-         ellipse(xorig,yorig,40,40);
-         xcor = xorig;
-         ycor = yorig;
-         state = ALIVE;
+         players[i].state = DEAD;
+         players[i].respawn();
        }
+       /*if((x.xcor == players[i].xcor && x.ycor == players[i].ycor)){
+         players[i].lives -= 1;
+         players[i].state = DEAD;
+         players[i].respawn();
+         
+       }*/
     }
     }
   }
   void die(){
     //delay(10000000);
-    state = ALIVE;
+    state = DEAD;
   }
   
   

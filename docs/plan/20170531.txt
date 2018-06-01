@@ -1,0 +1,21 @@
+==============================================================
+Plan directory will hold your plans for realizing your goals, with each 
+new draft named for its born day, in the format shown. Each new draft of 
+your plan should address prioritization, workload sharing, and chronology:
+
+Which jobs are most crucial?
+Which components constitute core functionality (vs non-essential)?
+Which components are prerequisites for others?
+Which tasks can be delegated, and which must be collaboratively tackled?
+What is the timeline, and how does it accommodate setbacks, course changes?
+==============================================================
+
+We are recreating a multiplayer game called Bomb It, where players control 
+keys to navigate a maze, set bombs to blow-up removable walls, and beating 
+other players by placing a bomb within their range, potentially the use of 
+power-ups. Our version, the Attack on the Vegetables, utilizes processing 
+to materialize a simplied version of Bomb It.
+
+We will have one overlaying processing file called game, which operates the
+actual game (the Driver file). Then we will create different player files 
+and bomb files.
