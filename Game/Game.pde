@@ -39,15 +39,15 @@ void draw() {
   }
 }
 void keyPressed(){
-<<<<<<< HEAD
+
   if(key == 'w' && (players[0].ycor >= 90) && get((int)players[0].xcor,(int)players[0].ycor - 60) == color(129, 206, 15)){
-=======
+
   if(key == ENTER && start == 0){
     game = true;
     start += 1;
   }
   if(key == 'w' && (players[0].ycor >= 90)){
->>>>>>> a4d13b58bdf33689af9f7e967590001fc0333f37
+
     players[0].ycor -= 60; 
   }
   if(key == 's' && (players[0].ycor <= 510) && get((int)players[0].xcor,(int)players[0].ycor + 60) == color(129, 206, 15)){
