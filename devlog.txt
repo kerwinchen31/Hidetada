@@ -61,7 +61,9 @@ Wenting ::
 
 2018-05-30
 --------------------------------------------------------------
-Hasif :: Worked on maze algorithm, still in learnation period
+Hasif :: Worked on maze algorithm, still in learnation period,
+        player movement, bomb explosion, respawning, setup background,
+        fix problem with bomb deployment
 Kerwin :: Researching on the intertubes for dephtening of knowledge
           in processing
 Wenting :: House cleaning...linked the submodule for this repo
