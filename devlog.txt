@@ -50,11 +50,27 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
+Empty Sample:
+2018-06-
+--------------------------------------------------------------
+Hasif :: 
+Kerwin :: 
+Wenting :: 
+==============================================================
+
+
 2018-05-30
 --------------------------------------------------------------
 Hasif :: Worked on maze algorithm, still in learnation period
 Kerwin :: Researching on the intertubes for dephtening of knowledge
           in processing
 Wenting :: House cleaning...linked the submodule for this repo
+==============================================================
+
+2018-05-31
+--------------------------------------------------------------
+Hasif :: 
+Kerwin :: 
+Wenting :: 
 ==============================================================
 
