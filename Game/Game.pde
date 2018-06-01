@@ -25,32 +25,32 @@ void draw() {
   }
 }
 void keyPressed(){
-  if(key == 'w' && (players[0].ycor >= 90)){
+  if(key == 'w' && (players[0].ycor >= 90) && get((int)players[0].xcor,(int)players[0].ycor - 60) == color(129, 206, 15)){
     players[0].ycor -= 60; 
   }
-  if(key == 's' && (players[0].ycor <= 510)){
+  if(key == 's' && (players[0].ycor <= 510) && get((int)players[0].xcor,(int)players[0].ycor + 60) == color(129, 206, 15)){
     players[0].ycor += 60; 
   }
-  if(key =='a' && (players[0].xcor >= 90)){
+  if(key =='a' && (players[0].xcor >= 90) && get((int)players[0].xcor - 60,(int)players[0].ycor) == color(129, 206, 15)){
     players[0].xcor -= 60; 
   }
-  if(key == 'd' && (players[0].xcor <= 510)){
+  if(key == 'd' && (players[0].xcor <= 510) && get((int)players[0].xcor + 60,(int)players[0].ycor) == color(129, 206, 15)){
     players[0].xcor += 60; 
   }
   if(key == 'f'){
     players[0].dropbomb(); 
   }
  
-    if(key == 'i' && (players[1].ycor >= 90)){
+    if(key == 'i' && (players[1].ycor >= 90) && get((int)players[1].xcor,(int)players[1].ycor -60) == color(129, 206, 15)){
     players[1].ycor -= 60; 
   }
-   if(key == 'k' && (players[1].ycor <= 510)){
+   if(key == 'k' && (players[1].ycor <= 510)&& get((int)players[1].xcor,(int)players[1].ycor +60) == color(129, 206, 15)){
     players[1].ycor += 60; 
   }
-  if(key == 'j' && (players[1].xcor >= 90)){
+  if(key == 'j' && (players[1].xcor >= 90)&& get((int)players[1].xcor-60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor -= 60; 
   }
-  if(key == 'l' && (players[1].xcor <= 510)){
+  if(key == 'l' && (players[1].xcor <= 510)&& get((int)players[1].xcor+60,(int)players[0].ycor) == color(129, 206, 15)){
     players[1].xcor += 60; 
   }
   if(key == BACKSPACE){
