@@ -30,16 +30,26 @@ void draw() {
     textSize(25);
     text("Press Number Associated With Color",75,400);
      choose[0] = new Player(90,175,0,0,255,100);
+     
      choose[1] = new Player(200,175,0,255,0,100);
+     
      choose[2] = new Player(310,175,255,0,0,100);
+     
      choose[3] = new Player(420,175,0,255,255,100);
+     
      choose[4] = new Player(530,175,255,0,255,100);
+     
      choose[5] = new Player(90,300,255,255,0,100);
+     
      choose[6] = new Player(200,300,255,255,255,100);
+     
      choose[7] = new Player(310,300,100,100,100,100);
+     
      choose[8] = new Player(420,300,180,50,255,100);
+     
      choose[9] = new Player(530,300,90,60,30,100);
      
+ 
      for(int l = 0;l < choose.length; l++){
     if(choose[l].getLife() == 0){
       choose[l].die();
@@ -47,10 +57,23 @@ void draw() {
      choose[l].update(choose); 
     }
     }
+    textSize(40);
+     fill(0,0,0);
+     text("0",78,187);
+     text("1",188,187);
+     text("2",298,187);
+     text("3",408,187);
+     text("4",518,187);
+     text("5",78,312);
+     text("6",188,312);
+     text("7",298,312);
+     text("8",408,312);
+     text("9",518,312);
     
   }
   if(start == 1){
     background(0);
+         
     textSize(45);
     fill(0,0,255);
     text("Choose Your Player 1 Color",5,100);
@@ -67,13 +90,26 @@ void draw() {
      choose[8] = new Player(420,300,180,50,255,100);
      choose[9] = new Player(530,300,90,60,30,100);
      
-     for(int j = 0;j < choose.length; j++){
+
+    for(int j = 0;j < choose.length; j++){
     if(choose[j].getLife() == 0){
       choose[j].die();
     } else {
      choose[j].update(choose); 
     }
     }
+    textSize(40);
+     fill(0,0,0);
+     text("0",78,187);
+     text("1",188,187);
+     text("2",298,187);
+     text("3",408,187);
+     text("4",518,187);
+     text("5",78,312);
+     text("6",188,312);
+     text("7",298,312);
+     text("8",408,312);
+     text("9",518,312);
     
   }
 
