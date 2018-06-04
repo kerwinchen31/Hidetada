@@ -88,7 +88,7 @@ Wenting ::
 
 2018-06-02
 --------------------------------------------------------------
-Hasif :: Finish main screen and color choices.  
+Hasif :: Finish main screen and color choices. Revise flow and uml pdfs. 
 Kerwin :: 
 Wenting :: 
 ==============================================================
