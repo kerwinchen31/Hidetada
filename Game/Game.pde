@@ -147,8 +147,13 @@ void draw() {
    players[3].updateCPU(players[3],players); 
   }
   }
+  //MouseDragged();
 }
 
+  void MouseDragged(){
+  fill(255, 102, 204);
+  rect(mouseX, mouseY, 50, 50);
+  }
 
 
 void keyPressed(){
