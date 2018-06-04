@@ -71,7 +71,24 @@ Wenting :: House cleaning...linked the submodule for this repo
 
 2018-05-31
 --------------------------------------------------------------
-Hasif :: 
+Hasif :: Bombs are now functional and there is dual player functionality.
+         Player movement fixed up. Borders created on edges of panel. 
+Kerwin :: 
+Wenting :: 
+==============================================================
+
+2018-06-01
+--------------------------------------------------------------
+Hasif :: Glitch with bomb killing player at spawn erasing player for good. 
+         Work on main screen and color choices. 
+Kerwin :: 
+Wenting :: 
+==============================================================
+
+
+2018-06-02
+--------------------------------------------------------------
+Hasif :: Finish main screen and color choices.  
 Kerwin :: 
 Wenting :: 
 ==============================================================
