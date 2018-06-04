@@ -3,11 +3,36 @@ Plan directory will hold your plans for realizing your goals, with each
 new draft named for its born day, in the format shown. Each new draft of 
 your plan should address prioritization, workload sharing, and chronology:
 
+Plan Updates {
 Which jobs are most crucial?
+Setting the basic functionality of the game where players can blow each other up and stuff. Then would come to implementation of 
+maze algorithms into our maps to promote diverse maps leading to more fun. 
 Which components constitute core functionality (vs non-essential)?
+Core- Placing of bombs 
+Elimination of players 
+Movement of players
+Maze implementation 
+CPU movement 
+Non-essential- 
+Score 
+Lives counter 
+Main Screen
+Power-ups
+Abilitiy to choose color of player
 Which components are prerequisites for others?
+To be able to implement maze algorithms we have to set a grid for a basic map layout which we will 
+use our maze algorithms to edit and pop out a mazi-fied version. 
 Which tasks can be delegated, and which must be collaboratively tackled?
+Movement and elimination can be delegated. CPU movement can be delegated. 
+Maze implementation must be collaboratively tackled. As should bug fixing. 
 What is the timeline, and how does it accommodate setbacks, course changes?
+Finish all the core-functionality except for CPU movement and maze implementation by 6/1.
+Finish main screen and color choosing over weekend. 
+Finish CPU movement by 6/4 night. 
+Finish Maze implementation by 6/5. 
+Finish rest by 6/6. 
+Review and fix bugs. 
+}
 ==============================================================
 
 We are recreating a multiplayer game called Bomb It, where players control 
