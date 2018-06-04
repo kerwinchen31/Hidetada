@@ -15,8 +15,8 @@ void setup() {
   background(255, 204, 0);
   textSize(32);
   text("Attack of the Vegetables", 90,150);
-  text("1 Player (a)", 90, 300);
-  text("2 Player (b)",90,350);
+  text("1 Player: Press a", 90, 300);
+  text("2 Player: Press b",90,350);
   
   
 }
@@ -353,7 +353,7 @@ void keyPressed(){
   if(key == 'j' && (players[1].xcor >= 90)&& get((int)players[1].xcor-60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor -= 60; 
   }
-  if(key == 'l' && (players[1].xcor <= 510)&& get((int)players[1].xcor+60,(int)players[0].ycor) == color(129, 206, 15)){
+  if(key == 'l' && (players[1].xcor <= 510)&& get((int)players[1].xcor+60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor += 60; 
   }
   if(key == BACKSPACE){

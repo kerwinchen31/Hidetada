@@ -50,21 +50,21 @@ class Player{
     int k = closest(x,players);
     int p = (int)(Math.random() * 25);
     if(p == 3){ 
-    if(players[k].ycor == x.ycor){
-      if(players[k].xcor > x.xcor){
+    if(players[k].ycor == x.ycor ){
+      if(players[k].xcor > x.xcor && get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
          x.xcor += 60; 
          fill(c);
       ellipse(xcor,ycor,r,r);
-      } else { 
+      } else if (get((int)x.xcor - 60,(int)x.ycor) == color(129, 206, 15)){ 
       x.xcor -= 60; 
     fill(c);
       ellipse(xcor,ycor,r,r);
     }
-    } else if(players[k].ycor > x.ycor){
+    } else if(players[k].ycor > x.ycor && get((int)x.xcor,(int)x.ycor + 60) == color(129, 206, 15)){
       x.ycor += 60;
       fill(c);
       ellipse(xcor,ycor,r,r);
-    } else {
+    } else if (get((int)x.xcor,(int)x.ycor - 60) == color(129, 206, 15)){
       x.ycor -= 60;
       fill(c);
       ellipse(xcor,ycor,r,r);
