@@ -138,8 +138,19 @@ void draw() {
      players[j].update(players); 
     }
   }
+  if(player2 == false){
+   players[1].updateCPU(players[1],players); 
+   players[2].updateCPU(players[2],players); 
+   players[3].updateCPU(players[3],players); 
+  } else {
+    players[2].updateCPU(players[2],players); 
+   players[3].updateCPU(players[3],players); 
+  }
   }
 }
+
+
+
 void keyPressed(){
   if(start == 0 && key =='a'){
     start = 1;

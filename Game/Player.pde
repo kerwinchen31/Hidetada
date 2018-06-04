@@ -31,6 +31,46 @@ class Player{
    } 
 
   }
+  double distance(Player x, Player y){
+    return Math.sqrt(Math.pow(x.xcor - y.xcor,2) + Math.pow(x.ycor - y.ycor, 2));
+  }
+  int closest(Player x,Player[] players){
+    double j = distance(x, players[0]);
+    int i = 0;
+    for(int k = 1; k < players.length; k++){
+      double dis = distance(x, players[k]);
+      if ( dis < j && dis != 0){
+         j = dis; 
+         i = k;
+      }
+    }
+    return i;
+  }
+  void updateCPU(Player x, Player[] players){
+    int k = closest(x,players);
+    int p = (int)(Math.random() * 25);
+    if(p == 3){ 
+    if(players[k].ycor == x.ycor){
+      if(players[k].xcor > x.xcor){
+         x.xcor += 60; 
+         fill(c);
+      ellipse(xcor,ycor,r,r);
+      } else { 
+      x.xcor -= 60; 
+    fill(c);
+      ellipse(xcor,ycor,r,r);
+    }
+    } else if(players[k].ycor > x.ycor){
+      x.ycor += 60;
+      fill(c);
+      ellipse(xcor,ycor,r,r);
+    } else {
+      x.ycor -= 60;
+      fill(c);
+      ellipse(xcor,ycor,r,r);
+    }
+    }
+  }
   void respawn(){
     fill(c);
     ellipse(xorig,yorig,r,r);
