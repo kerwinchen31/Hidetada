@@ -17,3 +17,5 @@ There will be two modes. The first mode is a deathmatch and the second one is a 
 After you launch Game.pde in processing, a game screen will appear, prompting the user to enter a for the 1-player mode and b for the 2-player mode. Then, the game will prompt user(s) to enter a number from 0-9 corresponding to a color displayed on the screen to choose a color for each player.
 
 In 1-player mode, user will use the keys W, A, S, D to move up, left, down, right one unit respectively and F to drop an exploding vegetable. In 2- player mode, player 1 will use the keys W, A, S, D, F, while player 2 will use the the keys I, J, K, L to move up, left, down, right one unit and the backspace or delete key to drop an exploding vegetable. Each character starts with 3 hearts. It's the survival of the fittest, so drop a veggie on the other players before they drop one on you!
+
+Press G to return to the main menu!
