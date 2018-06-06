@@ -92,7 +92,7 @@ void draw() {
      
 
     for(int j = 0;j < choose.length; j++){
-    if(choose[j].getLife() == 0){
+    if(choose[j].getLife() <= 0){
       choose[j].die();
     } else {
      choose[j].update(choose); 
@@ -132,29 +132,29 @@ void draw() {
   }
   }
   for(int j = 0;j < players.length; j++){
-    if(players[j].getLife() == 0){
+    if(players[j].getLife() <= 0){
       players[j].die();
-      //MouseDragged();
+     
     } else {
      players[j].update(players); 
-     //MouseDragged();
+     
     }
   }
   if(player2 == false){
-    if(players[1].getLife() != 0){
+    if(players[1].getLife() > 0){
    players[1].updateCPU(players[1],players); 
     }
-    if(players[2].getLife() != 0){
+    if(players[2].getLife() > 0){
    players[2].updateCPU(players[2],players); 
     }
-    if(players[3].getLife() != 0){
+    if(players[3].getLife() > 0){
    players[3].updateCPU(players[3],players); 
     }
   } else {
-    if(players[2].getLife() != 0){
+    if(players[2].getLife() > 0){
    players[2].updateCPU(players[2],players); 
     }
-    if(players[3].getLife() != 0){
+    if(players[3].getLife() > 0){
    players[3].updateCPU(players[3],players); 
     }
   }
@@ -162,7 +162,7 @@ void draw() {
   
 }
 
-  void MouseDragged(){
+  void mouseClicked(){
   fill(255, 102, 204);
   rect(mouseX, mouseY, 50, 50);
   }
