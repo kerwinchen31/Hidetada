@@ -141,12 +141,22 @@ void draw() {
     }
   }
   if(player2 == false){
+    if(players[1].getLife() != 0){
    players[1].updateCPU(players[1],players); 
+    }
+    if(players[2].getLife() != 0){
    players[2].updateCPU(players[2],players); 
+    }
+    if(players[3].getLife() != 0){
    players[3].updateCPU(players[3],players); 
+    }
   } else {
-    players[2].updateCPU(players[2],players); 
+    if(players[2].getLife() != 0){
+   players[2].updateCPU(players[2],players); 
+    }
+    if(players[3].getLife() != 0){
    players[3].updateCPU(players[3],players); 
+    }
   }
   }
   
