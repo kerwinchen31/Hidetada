@@ -1,8 +1,8 @@
 # Team Hidetada
-Hasif Ahmed,
-Kerwin Chen,
-Wenting Li
+##### Hasif Ahmed, Kerwin Chen, Wenting Li
 
+                                          Attack of the Vegetables 
+                                          
 **Description**
 
 Our final project is to use processing to create the game Bomb-It, but instead of bombs we use vegetables! The goal of the game is to be the last one standing. There will be at most up to two players in the game.
