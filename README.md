@@ -1,7 +1,7 @@
 # Team Hidetada
 ##### Hasif Ahmed, Kerwin Chen, Wenting Li
 
-                                          Attack of the Vegetables 
+                                           Attack of the Vegetables 
                                           
 **Description**
 
