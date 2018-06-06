@@ -134,8 +134,10 @@ void draw() {
   for(int j = 0;j < players.length; j++){
     if(players[j].getLife() == 0){
       players[j].die();
+      //MouseDragged();
     } else {
      players[j].update(players); 
+     //MouseDragged();
     }
   }
   if(player2 == false){
@@ -147,7 +149,7 @@ void draw() {
    players[3].updateCPU(players[3],players); 
   }
   }
-  //MouseDragged();
+  
 }
 
   void MouseDragged(){
