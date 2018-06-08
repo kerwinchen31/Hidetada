@@ -12,6 +12,10 @@ int c6 = 0;
 int pcount = 4;
 boolean ends;
 int winner;
+void modify(int x){
+  breakable.remove(x);
+  breakable.remove(x);
+}
 void setup() {
   size(600, 600);
   fill(50, 160, 100);
@@ -35,6 +39,12 @@ void setup() {
   
   breakable.add(185);
   breakable.add(5);
+  
+  breakable.add(185);
+  breakable.add(245);
+  
+  breakable.add(185);
+  breakable.add(305);
   
   breakable.add(245);
   breakable.add(185);
@@ -245,47 +255,12 @@ void draw() {
   rect(485,485,50,50);
   //rect(485,545,50,50);
   
-  fill(255,255,255);
   
-  rect(5,245,50,50);
-  rect(5,365,50,50);
-  
-  rect(65,425,50,50);
-  
-  rect(125,65,50,50);
-  
-  rect(185,5,50,50);
-  rect(185,245,50,50);
-  rect(185,305,50,50);
-  
-  rect(245,185,50,50);
-  rect(245,305,50,50);
-  rect(245,365,50,50);
-  rect(245,545,50,50);
-  
-  
-  rect(305,5,50,50);
-  rect(305,185,50,50);
-  rect(305,245,50,50);
-  rect(305,365,50,50);
-  
-  rect(365,245,50,50);
-  rect(365,305,50,50);
-  rect(365,365,50,50);
-  rect(365,545,50,50);
-  
-  rect(425,485,50,50);
-  
-  rect(485,125,50,50);
-  
-  rect(545,185,50,50);
-  rect(545,305,50,50);
   
   fill(255,255,255);
-  for(int i = 0; i < breakable.size(); i += 2){
+   for(int i = 0; i < breakable.size(); i += 2){
       rect(breakable.get(i) ,breakable.get(i+1) ,50,50);
   }
-  
   fill(0,0,255);
   rect(5,185,50,50);
   
@@ -323,6 +298,8 @@ void draw() {
     if(players[3].getLife() > 0){
    players[3].updateCPU(players[3],players); 
     }
+   
+  
   }
   if(pcount == 0 || pcount == 1){
     pcount -= 1;
@@ -330,7 +307,10 @@ void draw() {
   } else {
     pcount = 4;
   }
+  
   }
+  
+  
    
     }
 }
@@ -505,6 +485,72 @@ void keyPressed(){
     c4 = 0;
     c5 = 0;
     c6 = 0;
+    breakable = new ArrayList<Integer>();
+    breakable.add(5);
+  breakable.add(245);
+  
+  breakable.add(5);
+  breakable.add(365);
+  
+  breakable.add(65);
+  breakable.add(425);
+  
+  breakable.add(125);
+  breakable.add(65);
+  
+  breakable.add(185);
+  breakable.add(5);
+  
+  breakable.add(185);
+  breakable.add(245);
+  
+  breakable.add(185);
+  breakable.add(305);
+  
+  breakable.add(245);
+  breakable.add(185);
+  
+  breakable.add(245);
+  breakable.add(305);
+  
+  breakable.add(245);
+  breakable.add(365);
+  
+  breakable.add(245);
+  breakable.add(545);
+  
+  breakable.add(305);
+  breakable.add(5);
+  
+  breakable.add(305);
+  breakable.add(185);
+  
+  breakable.add(305);
+  breakable.add(245);
+  
+  breakable.add(305);
+  breakable.add(365);
+  
+  breakable.add(365);
+  breakable.add(245);
+  
+  breakable.add(365);
+  breakable.add(305);
+  
+  breakable.add(365);
+  breakable.add(545);
+  
+  breakable.add(425);
+  breakable.add(485);
+  
+  breakable.add(485);
+  breakable.add(125);
+  
+  breakable.add(545);
+  breakable.add(185);
+  
+  breakable.add(545);
+  breakable.add(305);
    fill(50, 160, 100);
   
   background(255, 204, 0);
@@ -574,7 +620,10 @@ void keyPressed(){
   
   if(key == 'f'){
     players[0].dropbomb(); 
-    players[0].updateWall(breakable);
+    ArrayList<Integer> l = players[0].updateWall(breakable);
+    for(int jk = 0; jk < l.size(); jk++){
+      modify(l.get(jk) - (jk * 2));
+    }
   }
    
    if(player2 == true){
@@ -612,7 +661,11 @@ void keyPressed(){
   }
   if(key == BACKSPACE){
     players[1].dropbomb(); 
-    players[1].updateWall(breakable);
+    
+    ArrayList<Integer> ok = players[1].updateWall(breakable);
+    for(int jk = 0; jk < ok.size(); jk++){
+      modify(ok.get(jk));
+    }
   }
   }
   }

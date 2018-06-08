@@ -107,15 +107,15 @@ class Player{
     }
   }
   
-  void updateWall(ArrayList<Integer> y){
-  if (x != null){
+  ArrayList<Integer> updateWall(ArrayList<Integer> y){
+    ArrayList<Integer> tot = new ArrayList<Integer>(9);
     for(int i = 0; i < y.size(); i += 2){
-      if (x.xcor + 60 == y.get(i) &&  x.ycor == y.get(i+1)){
-       y.remove(i);
-       y.remove(i);
-      }
+      float distance = dist(x.xcor, x.ycor,y.get(i) , y.get(i+1));
+       if(distance <= 100){
+          tot.add(i);
+       }
     }
-  }
+    return tot;
 }
   
   void updateCPU(Player x, Player[] players){
