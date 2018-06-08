@@ -18,6 +18,7 @@ void modify(int x){
 }
 void setup() {
   size(600, 600);
+  winner = 1;
   fill(50, 160, 100);
   ends = false; 
   background(255, 204, 0);
@@ -98,10 +99,11 @@ void setup() {
 }
 
 void draw() {
+    
     if(pcount <= 1){
       pcount -= 1;
     }
-    if(pcount == -100){
+    if(pcount == -60){
       ends = true; 
       
     }
@@ -109,7 +111,11 @@ void draw() {
       background(0);
       textSize(45);
       fill(0,0,255);
-      text("Winner:",5,100);
+      if(winner == -1){
+        text("No Winner", 5, 100);
+      } else { 
+      text("Winner: Player " + winner,5,100);
+      }
       text("Game Over",5,300);
       text("Press G to Restart",5,500);
     } else {
@@ -302,7 +308,14 @@ void draw() {
    
   }
   if(pcount == 0 || pcount == 1){
-    pcount -= 1;
+    if(pcount == 0) winner = -1;
+    if(pcount == 1){
+     for(int i = 0; i < players.length; i++){
+       if(players[i].state == 0){
+         winner = i + 1;
+       }
+    }
+    }
     game = false; 
   } else {
     pcount = 4;
