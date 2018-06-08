@@ -126,7 +126,7 @@ class Player{
     check(players);
     checkToBomb(x,players);
     int k = closest(x,players);
-    int p = (int)(Math.random() * 25); 
+    int p = (int)(Math.random() * 50); 
     if(p == 3){ 
     if(players[k].ycor == x.ycor ){
       if(players[k].xcor > x.xcor && get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
