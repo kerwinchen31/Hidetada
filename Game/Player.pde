@@ -75,28 +75,7 @@ class Player{
       }
   }
   
-  void scram(Player x){
-        int p = (int)(Math.random() * 50);
-    if(p == 3){ 
-        if(get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
-         x.xcor += 60; 
-         fill(c);
-      ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor - 60,(int)x.ycor) == color(129, 206, 15)){
-        x.xcor -= 60; 
-        fill(c);
-        ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor,(int)x.ycor + 60) == color(129, 206, 15)){
-         x.ycor += 60; 
-         fill(c);
-      ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor,(int)x.ycor - 60) == color(129, 206, 15)){
-        x.ycor -= 60; 
-        fill(c);
-        ellipse(xcor,ycor,r,r);
-      }
-  }
-  }
+ 
   
   void checkToBomb(Player x, Player[] players){
     for(int k = 0; k < players.length; k++){ 
@@ -107,11 +86,8 @@ class Player{
         for(int i = 0; i < clipped.size(); i++){
           modify(clipped.get(i) - (i * 2));
         }
-        scram(x);
-        scram(x);
-        scram(x);
-        scram(x);
-        scram(x);
+        
+        
       }
       }
       }
@@ -130,9 +106,7 @@ class Player{
   void updateCPU(Player x, Player[] players){
     check(players);
     checkToBomb(x,players);
-    if (bombVicinity(x)){
-      scram(x);
-    }
+  
     int k = closest(x,players);
     int p = (int)(Math.random() * 50); 
     if(p == 3){ 
