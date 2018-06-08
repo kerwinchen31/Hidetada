@@ -109,6 +109,9 @@ class Player{
         }
         scram(x);
         scram(x);
+        scram(x);
+        scram(x);
+        scram(x);
       }
       }
       }
@@ -127,6 +130,9 @@ class Player{
   void updateCPU(Player x, Player[] players){
     check(players);
     checkToBomb(x,players);
+    if (bombVicinity(x)){
+      scram(x);
+    }
     int k = closest(x,players);
     int p = (int)(Math.random() * 50); 
     if(p == 3){ 
