@@ -61,16 +61,22 @@ class Player{
       }
   }
   
-  void checkToBomb(Player x, Player[] players){
-    for(int k = 0; k < players.length; k++){ 
-      double dis = distance(x, players[k]);
-      if (dis < 85 && dis != 0 || whiteVicinity(x)){
-        x.dropbomb();
-        ArrayList<Integer> clipped = updateWall(breakable);
-        for(int i = 0; i < clipped.size(); i++){
-          modify(clipped.get(i) - (i * 2));
-        }
-    int p = (int)(Math.random() * 25);
+    boolean bombVicinity(Player x){
+      if(get((int)x.xcor + 60,(int)x.ycor) == color(0,0,255)){
+        return true;
+      }else if(get((int)x.xcor - 60,(int)x.ycor) == color(0,0,255)){
+        return true;
+      }else if(get((int)x.xcor,(int)x.ycor + 60) == color(0,0,255)){
+        return true;
+      }else if(get((int)x.xcor,(int)x.ycor - 60) == color(0,0,255)){
+        return true;
+      }else{
+        return false;
+      }
+  }
+  
+  void scram(Player x){
+        int p = (int)(Math.random() * 50);
     if(p == 3){ 
         if(get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
          x.xcor += 60; 
@@ -89,27 +95,23 @@ class Player{
         fill(c);
         ellipse(xcor,ycor,r,r);
       }
-              if(get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
-         x.xcor += 60; 
-         fill(c);
-      ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor - 60,(int)x.ycor) == color(129, 206, 15)){
-        x.xcor -= 60; 
-        fill(c);
-        ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor,(int)x.ycor + 60) == color(129, 206, 15)){
-         x.ycor += 60; 
-         fill(c);
-      ellipse(xcor,ycor,r,r);
-      }else if(get((int)x.xcor,(int)x.ycor - 60) == color(129, 206, 15)){
-        x.ycor -= 60; 
-        fill(c);
-        ellipse(xcor,ycor,r,r);
-      }
-      }
-      }
-    }
   }
+  }
+  
+  void checkToBomb(Player x, Player[] players){
+    for(int k = 0; k < players.length; k++){ 
+      double dis = distance(x, players[k]);
+      if (dis < 85 && dis != 0 || whiteVicinity(x)){
+        x.dropbomb();
+        ArrayList<Integer> clipped = updateWall(breakable);
+        for(int i = 0; i < clipped.size(); i++){
+          modify(clipped.get(i) - (i * 2));
+        }
+        scram(x);
+        scram(x);
+      }
+      }
+      }
   
   ArrayList<Integer> updateWall(ArrayList<Integer> y){
     ArrayList<Integer> tot = new ArrayList<Integer>(9);
