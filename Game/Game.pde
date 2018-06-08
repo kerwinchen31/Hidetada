@@ -8,6 +8,7 @@ int c1,c2,c3;
 int c4 = 0;
 int c5 = 0;
 int c6 = 0;
+
 void setup() {
   size(600, 600);
   fill(50, 160, 100);
@@ -200,6 +201,14 @@ void draw() {
   rect(545,185,50,50);
   rect(545,305,50,50);
   
+  fill(0,0,255);
+  rect(5,185,50,50);
+  
+  rect(545,365,50,50);
+  
+  fill(255,0,0);
+  rect(185,545,50,50);
+  rect(365,5,50,50);
   
   for(int j = 0;j < players.length; j++){
     if(players[j].getLife() <= 0){
@@ -410,28 +419,94 @@ void keyPressed(){
   text("2 Player (b)",90,350);
   }
   if(key == 'w' && (players[0].ycor >= 90) && get((int)players[0].xcor,(int)players[0].ycor - 60) == color(129, 206, 15)){
-
     players[0].ycor -= 60; 
   }
+  else if(key == 'w' && get((int)players[0].xcor,(int)players[0].ycor - 60) == color(0,0,255) ){
+    if(players[0].xcor == 30 && players[0].ycor - 60 == 210){
+      players[0].ycor = 390;
+      players[0].xcor = 570;
+    }
+    if(players[0].xcor == 570 && players[0].ycor - 60 == 390){
+      players[0].ycor = 210;
+      players[0].xcor = 30;
+    } 
+    
+  }
+  
   if(key == 's' && (players[0].ycor <= 510) && get((int)players[0].xcor,(int)players[0].ycor + 60) == color(129, 206, 15)){
     players[0].ycor += 60; 
   }
+  else if(key == 's' && get((int)players[0].xcor,(int)players[0].ycor + 60) == color(0,0,255)){
+      if(players[0].xcor == 30 && players[0].ycor + 60 == 210){
+      players[0].ycor = 390;
+      players[0].xcor = 570;
+    }
+    if(players[0].xcor == 570 && players[0].ycor + 60 == 390){
+      players[0].ycor = 210;
+      players[0].xcor = 30;
+    }
+  }
+    
   if(key =='a' && (players[0].xcor >= 90) && get((int)players[0].xcor - 60,(int)players[0].ycor) == color(129, 206, 15)){
     players[0].xcor -= 60; 
   }
+  else if(key == 'a' && get((int)players[0].xcor - 60,(int)players[0].ycor) == color(255,0,0) ){
+    if(players[0].xcor - 60 == 210 && players[0].ycor == 570){
+      players[0].ycor = 30;
+      players[0].xcor = 390;
+    }
+    if(players[0].xcor - 60 == 390 && players[0].ycor == 30){
+      players[0].ycor = 570;
+      players[0].xcor = 210;
+    } 
+    
+  }
+
   if(key == 'd' && (players[0].xcor <= 510) && get((int)players[0].xcor + 60,(int)players[0].ycor) == color(129, 206, 15)){
     players[0].xcor += 60; 
+  } 
+  else if(key == 'd' && get((int)players[0].xcor + 60,(int)players[0].ycor) == color(255,0,0) ){
+    if(players[0].xcor + 60 == 210 && players[0].ycor == 570){
+      players[0].ycor = 30;
+      players[0].xcor = 390;
+    }
+    if(players[0].xcor + 60 == 390 && players[0].ycor == 30){
+      players[0].ycor = 570;
+      players[0].xcor = 210;
+    } 
+    
   }
+  
   if(key == 'f'){
     players[0].dropbomb(); 
   }
    
    if(player2 == true){
-    if(key == 'i' && (players[1].ycor >= 90) && get((int)players[1].xcor,(int)players[1].ycor -60) == color(129, 206, 15)){
+     
+    if(key == 'i' && (players[1].ycor >= 90) && get((int)players[1].xcor,(int)players[1].ycor - 60) == color(129, 206, 15)){
     players[1].ycor -= 60; 
+  } else if(key == 'i' && get((int)players[1].xcor,(int)players[1].ycor - 60) == color(0,0,255)){
+      if(players[1].xcor == 30 && players[1].ycor - 60 == 210){
+      players[1].ycor = 390;
+      players[1].xcor = 570;
+    }
+    if(players[1].xcor == 570 && players[1].ycor - 60 == 390){
+      players[1].ycor = 210;
+      players[1].xcor = 30;
+    }
   }
+  
    if(key == 'k' && (players[1].ycor <= 510)&& get((int)players[1].xcor,(int)players[1].ycor +60) == color(129, 206, 15)){
     players[1].ycor += 60; 
+  } else if(key == 'k' && get((int)players[1].xcor,(int)players[1].ycor + 60) == color(0,0,255)){
+      if(players[1].xcor == 30 && players[1].ycor + 60 == 210){
+      players[1].ycor = 390;
+      players[1].xcor = 570;
+    }
+    if(players[1].xcor == 570 && players[1].ycor + 60 == 390){
+      players[1].ycor = 210;
+      players[1].xcor = 30;
+    }
   }
   if(key == 'j' && (players[1].xcor >= 90)&& get((int)players[1].xcor-60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor -= 60; 

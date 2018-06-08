@@ -99,8 +99,49 @@ class Player{
       fill(c);
       ellipse(xcor,ycor,r,r);
     
+    } else if(get((int)x.xcor,(int)x.ycor - 60) == color(0,0,255)){
+      if(x.xcor == 30 && x.ycor - 60 == 210){
+      x.ycor = 390;
+      x.xcor = 570;
     }
+    if(x.xcor == 570 && x.ycor - 60 == 390){
+      x.ycor = 210;
+      x.xcor = 30;
+    } 
+    } 
+    else if(get((int)x.xcor,(int)x.ycor + 60) == color(0,0,255)){
+      if(x.xcor == 30 && x.ycor + 60 == 210){
+      x.ycor = 390;
+      x.xcor = 570;
     }
+    if(x.xcor == 570 && x.ycor + 60 == 390){
+      x.ycor = 210;
+      x.xcor = 30;
+    } 
+    }
+    else if(get((int)x.xcor + 60,(int)x.ycor) == color(255,0,0) ){
+    if(x.xcor + 60 == 210 && x.ycor == 570){
+      x.ycor = 30;
+      x.xcor = 390;
+    }
+    if(x.xcor + 60 == 390 && x.ycor == 30){
+      x.ycor = 570;
+      x.xcor = 210;
+    } 
+    }
+    else if(get((int)x.xcor - 60,(int)x.ycor) == color(255,0,0) ){
+    if(x.xcor - 60 == 210 && x.ycor == 570){
+      x.ycor = 30;
+      x.xcor = 390;
+    }
+    if(x.xcor - 60 == 390 && x.ycor == 30){
+      x.ycor = 570;
+      x.xcor = 210;
+    } 
+    }
+    
+    
+  }
   }
   void respawn(){
     fill(c);
