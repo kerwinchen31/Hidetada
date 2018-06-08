@@ -548,6 +548,7 @@ void keyPressed(){
   
   if(key == 'f'){
     players[0].dropbomb(); 
+    players[0].updateWall(breakable);
   }
    
    if(player2 == true){
@@ -585,6 +586,7 @@ void keyPressed(){
   }
   if(key == BACKSPACE){
     players[1].dropbomb(); 
+    players[1].updateWall(breakable);
   }
   }
   }

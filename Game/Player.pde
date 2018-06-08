@@ -85,37 +85,36 @@ class Player{
         fill(c);
         ellipse(xcor,ycor,r,r);
       }
+              if(get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){
+         x.xcor += 60; 
+         fill(c);
+      ellipse(xcor,ycor,r,r);
+      }else if(get((int)x.xcor - 60,(int)x.ycor) == color(129, 206, 15)){
+        x.xcor -= 60; 
+        fill(c);
+        ellipse(xcor,ycor,r,r);
+      }else if(get((int)x.xcor,(int)x.ycor + 60) == color(129, 206, 15)){
+         x.ycor += 60; 
+         fill(c);
+      ellipse(xcor,ycor,r,r);
+      }else if(get((int)x.xcor,(int)x.ycor - 60) == color(129, 206, 15)){
+        x.ycor -= 60; 
+        fill(c);
+        ellipse(xcor,ycor,r,r);
+      }
       }
       }
     }
   }
   
-  void updateWall(){
+  void updateWall(ArrayList<Integer> y){
   if (x != null){
- if (get((int)x.xcor+60,(int)x.ycor) == color(255)){
-   fill(129, 206, 15);
-   rectMode(RADIUS);
-   rect((int)x.xcor+60,(int)x.ycor,25,25);
-   rectMode(CORNER);
- }
-  if (get((int)x.xcor-60,(int)x.ycor) == color(255)){
-   fill(129, 206, 15);
-   rectMode(RADIUS);
-   rect((int)x.xcor-60,(int)x.ycor,25,25);
-   rectMode(CORNER);
- }
-  if (get((int)x.xcor,(int)x.ycor+60) == color(255)){
-   fill(129, 206, 15);
-   rectMode(RADIUS);
-   rect((int)x.xcor,(int)x.ycor+60,25,25);
-   rectMode(CORNER);
- }
-  if (get((int)x.xcor,(int)x.ycor-60) == color(255)){
-   fill(129, 206, 15);
-   rectMode(RADIUS);
-   rect((int)x.xcor,(int)x.ycor-60,25,25);
-   rectMode(CORNER);
- }
+    for(int i = 0; i < y.size(); i += 2){
+      if (x.xcor + 60 == y.get(i) &&  x.ycor == y.get(i+1)){
+       y.remove(i);
+       y.remove(i);
+      }
+    }
   }
 }
   
@@ -184,7 +183,7 @@ class Player{
       x.xcor = 210;
     } 
     }
-    updateWall();
+
   }
   }
   void respawn(){
@@ -212,7 +211,7 @@ class Player{
        }*/
     }
     }
-    updateWall();
+
   }
   void die(){
     //delay(10000000);
