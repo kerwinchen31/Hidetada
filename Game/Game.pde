@@ -1,5 +1,6 @@
 Player[] players = new Player[4];
 Player[] choose = new Player[10];
+ArrayList<Integer> breakable = new ArrayList<Integer>();
 boolean game = false;
 int start = 0;
 String word = "";
@@ -18,6 +19,68 @@ void setup() {
   text("Attack of the Vegetables", 90,150);
   text("1 Player: Press a", 90, 300);
   text("2 Player: Press b",90,350);
+  breakable.add(5);
+  breakable.add(245);
+  
+  breakable.add(5);
+  breakable.add(365);
+  
+  breakable.add(65);
+  breakable.add(425);
+  
+  breakable.add(125);
+  breakable.add(65);
+  
+  breakable.add(185);
+  breakable.add(5);
+  
+  breakable.add(245);
+  breakable.add(185);
+  
+  breakable.add(245);
+  breakable.add(305);
+  
+  breakable.add(245);
+  breakable.add(365);
+  
+  breakable.add(245);
+  breakable.add(545);
+  
+  breakable.add(305);
+  breakable.add(5);
+  
+  breakable.add(305);
+  breakable.add(185);
+  
+  breakable.add(305);
+  breakable.add(245);
+  
+  breakable.add(305);
+  breakable.add(365);
+  
+  breakable.add(365);
+  breakable.add(245);
+  
+  breakable.add(365);
+  breakable.add(305);
+  
+  breakable.add(365);
+  breakable.add(545);
+  
+  breakable.add(425);
+  breakable.add(485);
+  
+  breakable.add(485);
+  breakable.add(125);
+  
+  breakable.add(545);
+  breakable.add(185);
+  
+  breakable.add(545);
+  breakable.add(305);
+  
+  
+  
   
   
 }
@@ -201,10 +264,16 @@ void draw() {
   rect(545,185,50,50);
   rect(545,305,50,50);
   
+  fill(255,255,255);
+  for(int i = 0; i < breakable.size(); i += 2){
+      rect(breakable.get(i),breakable.get(i+1),50,50);
+  }
+  
   fill(0,0,255);
   rect(5,185,50,50);
   
   rect(545,365,50,50);
+  
   
   fill(255,0,0);
   rect(185,545,50,50);
