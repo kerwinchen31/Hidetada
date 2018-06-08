@@ -656,8 +656,30 @@ void keyPressed(){
   if(key == 'j' && (players[1].xcor >= 90)&& get((int)players[1].xcor-60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor -= 60; 
   }
+  else if(key == 'j' && get((int)players[1].xcor - 60,(int)players[1].ycor) == color(255,0,0) ){
+    if(players[1].xcor - 60 == 210 && players[1].ycor == 570){
+      players[1].ycor = 30;
+      players[1].xcor = 390;
+    }
+    if(players[1].xcor - 60 == 390 && players[1].ycor == 30){
+      players[1].ycor = 570;
+      players[1].xcor = 210;
+    } 
+    
+  }
   if(key == 'l' && (players[1].xcor <= 510)&& get((int)players[1].xcor+60,(int)players[1].ycor) == color(129, 206, 15)){
     players[1].xcor += 60; 
+  } 
+  else if(key == 'l' && get((int)players[1].xcor + 60,(int)players[1].ycor) == color(255,0,0) ){
+    if(players[1].xcor + 60 == 210 && players[1].ycor == 570){
+      players[1].ycor = 30;
+      players[1].xcor = 390;
+    }
+    if(players[1].xcor + 60 == 390 && players[1].ycor == 30){
+      players[1].ycor = 570;
+      players[1].xcor = 210;
+    } 
+    
   }
   if(key == BACKSPACE){
     players[1].dropbomb(); 

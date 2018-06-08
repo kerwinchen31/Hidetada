@@ -111,7 +111,7 @@ class Player{
     ArrayList<Integer> tot = new ArrayList<Integer>(9);
     for(int i = 0; i < y.size(); i += 2){
       float distance = dist(x.xcor, x.ycor,y.get(i) , y.get(i+1));
-       if(distance <= 100){
+       if(distance <= 95){
           tot.add(i);
        }
     }
