@@ -46,10 +46,25 @@ class Player{
     }
     return i;
   }
+  
+  boolean whiteVicinity(Player x){
+      if(get((int)x.xcor + 60,(int)x.ycor) == color(255)){
+        return true;
+      }else if(get((int)x.xcor - 60,(int)x.ycor) == color(255)){
+        return true;
+      }else if(get((int)x.xcor,(int)x.ycor + 60) == color(255)){
+        return true;
+      }else if(get((int)x.xcor,(int)x.ycor - 60) == color(255)){
+        return true;
+      }else{
+        return false;
+      }
+  }
+  
   void checkToBomb(Player x, Player[] players){
     for(int k = 0; k < players.length; k++){ 
       double dis = distance(x, players[k]);
-      if (dis < 85 && dis != 0){
+      if (dis < 85 && dis != 0 || whiteVicinity(x)){
         x.dropbomb();
     int p = (int)(Math.random() * 25);
     if(p == 3){ 
@@ -74,6 +89,36 @@ class Player{
       }
     }
   }
+  
+  void updateWall(){
+  if (x != null){
+ if (get((int)x.xcor+60,(int)x.ycor) == color(255)){
+   fill(129, 206, 15);
+   rectMode(RADIUS);
+   rect((int)x.xcor+60,(int)x.ycor,25,25);
+   rectMode(CORNER);
+ }
+  if (get((int)x.xcor-60,(int)x.ycor) == color(255)){
+   fill(129, 206, 15);
+   rectMode(RADIUS);
+   rect((int)x.xcor-60,(int)x.ycor,25,25);
+   rectMode(CORNER);
+ }
+  if (get((int)x.xcor,(int)x.ycor+60) == color(255)){
+   fill(129, 206, 15);
+   rectMode(RADIUS);
+   rect((int)x.xcor,(int)x.ycor+60,25,25);
+   rectMode(CORNER);
+ }
+  if (get((int)x.xcor,(int)x.ycor-60) == color(255)){
+   fill(129, 206, 15);
+   rectMode(RADIUS);
+   rect((int)x.xcor,(int)x.ycor-60,25,25);
+   rectMode(CORNER);
+ }
+  }
+}
+  
   void updateCPU(Player x, Player[] players){
     check(players);
     checkToBomb(x,players);
@@ -139,8 +184,7 @@ class Player{
       x.xcor = 210;
     } 
     }
-    
-    
+    updateWall();
   }
   }
   void respawn(){
@@ -168,6 +212,7 @@ class Player{
        }*/
     }
     }
+    updateWall();
   }
   void die(){
     //delay(10000000);
@@ -185,7 +230,7 @@ class Player{
     }
   } 
 }
-  
+   
   
   
   
