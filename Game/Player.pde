@@ -66,6 +66,10 @@ class Player{
       double dis = distance(x, players[k]);
       if (dis < 85 && dis != 0 || whiteVicinity(x)){
         x.dropbomb();
+        ArrayList<Integer> clipped = updateWall(breakable);
+        for(int i = 0; i < clipped.size(); i++){
+          modify(clipped.get(i) - (i * 2));
+        }
     int p = (int)(Math.random() * 25);
     if(p == 3){ 
         if(get((int)x.xcor + 60,(int)x.ycor) == color(129, 206, 15)){

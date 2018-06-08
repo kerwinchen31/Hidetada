@@ -257,15 +257,15 @@ void draw() {
   
   
   
-  fill(255,255,255);
-   for(int i = 0; i < breakable.size(); i += 2){
-      rect(breakable.get(i) ,breakable.get(i+1) ,50,50);
-  }
+  
   fill(0,0,255);
   rect(5,185,50,50);
   
   rect(545,365,50,50);
-  
+  fill(255,255,255);
+   for(int i = 0; i < breakable.size(); i += 2){
+      rect(breakable.get(i) ,breakable.get(i+1) ,50,50);
+  }
   
   fill(255,0,0);
   rect(185,545,50,50);
@@ -281,6 +281,7 @@ void draw() {
      
     }
   }
+  
   if(player2 == false){
     if(players[1].getLife() > 0){
    players[1].updateCPU(players[1],players); 
@@ -299,7 +300,6 @@ void draw() {
    players[3].updateCPU(players[3],players); 
     }
    
-  
   }
   if(pcount == 0 || pcount == 1){
     pcount -= 1;
@@ -686,7 +686,7 @@ void keyPressed(){
     
     ArrayList<Integer> ok = players[1].updateWall(breakable);
     for(int jk = 0; jk < ok.size(); jk++){
-      modify(ok.get(jk));
+      modify(ok.get(jk) - (jk * 2));
     }
   }
   }
