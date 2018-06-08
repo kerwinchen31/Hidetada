@@ -12,31 +12,34 @@ Attack of the Vegetables
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+- Coding the AIs: 
+  making the machine-controlled characters process which enemy is the closet and move towards them
+  allowing machine-controlled characters to drop a bomb to kill an enemy or break a breakable wall and avoiding the explosion range
+- Coding bombs:
+  making the explosion range match up with the tile size such that an explosion affects the 1-unit radius around the bomb
+  making the game screen update after each explosion such that destroyed things remain destroyed
+- Game screen aesthetics:
+  displaying instructions and color/mode selection on game screen
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+- Getting the timing right for updating a breakable wall after it has been broken by a bomb (the wall tends to disappear before the bomb explodes)
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+- Processing is quick. We had to code to slow everything down to make the game playable.
+- In processing, pixels are number from left to right and top to bottom starting from pixel 1 on the top left
+- Color generation is done with the following call: color[x,y,z] with the respective x, y, z, units of red, green, blue
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+- The feature of randomly generating maze maps every game and powerup items around the game floor.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+- Processing is super fast! Remember to code everything super slowed-down so characters don't appear to be glitchy.
+- Remember to not put all the code into one file. Code in separate classes for organization and so that the driver class won's be as hard to navigate.
+
 
 
  ______   ______   __   __   __       ______   _______     
@@ -50,12 +53,11 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-Empty Sample:
 2018-05-29
 --------------------------------------------------------------
-Hasif ::UML
-Kerwin :: Flow
-Wenting :: Flow 
+Hasif ::Uploaded UML.pdf
+Kerwin :: Uploaded Flow.pdf
+Wenting :: Worked on Flow.pdf
 ==============================================================
 
 
@@ -63,33 +65,54 @@ Wenting :: Flow
 --------------------------------------------------------------
 Hasif :: Worked on maze algorithm, still in learnation period,
         player movement, bomb explosion, respawning, setup background,
-        fix problem with bomb deployment
-Kerwin :: Researching on the intertubes for dephtening of knowledge
-          in processing
-Wenting :: House cleaning...linked the submodule for this repo
+        fix problem with bomb deployment.
+Kerwin :: Researched on the intertubes for dephtening of knowledge
+          in processing.
+Wenting :: House cleaning...linked the submodule for our repo.
 ==============================================================
 
 2018-05-31
 --------------------------------------------------------------
 Hasif :: Bombs are now functional and there is dual player functionality.
          Player movement fixed up. Borders created on edges of panel. 
-Kerwin :: 
-Wenting :: 
+Kerwin :: Explored funcionalities in creating a maze map for the game.
+Wenting :: Verbalized basic game rules, requirements to win the game, and game functionality that we can attempt to recreate.
 ==============================================================
 
 2018-06-01
 --------------------------------------------------------------
 Hasif :: Glitch with bomb killing player at spawn erasing player for good. 
          Work on main screen and color choices. 
-Kerwin :: 
-Wenting :: 
+Kerwin :: Drafted and planned a maze map for the game that includes placing of the breakable and unbreakable walls.
+Wenting :: Drafted and planned a maze map for the game that includes placing of the breakable and unbreakable walls.
 ==============================================================
 
 
 2018-06-02
 --------------------------------------------------------------
 Hasif :: Finish main screen and color choices. Revise flow and uml pdfs. 
-Kerwin :: 
-Wenting :: 
+Kerwin :: Coded method that shows distance between two players to facilitate AI movement.
+Wenting :: Listed glitches in the game that needed to be checked and features to implement.
+==============================================================
+
+2018-06-04
+--------------------------------------------------------------
+Hasif :: Implemented AI functionality. Coded the drafted maze map with updated colors for different types of walls.
+Kerwin :: Coded methods for AI to check for breakable walls and dropping/avoiding bombs while breaking walls.
+Wenting :: Updated the maze map to allow for more CPU movement. Worked on bug where AI characters stopped moving because they cant discern between a wall and the "shortest way" to reach an enemy.
+==============================================================
+
+2018-06-05
+--------------------------------------------------------------
+Hasif :: Color coded portals on game map that transferred the players to a corresponding portal. Updated AI functionality to avoid walls while moving.
+Kerwin :: Worked on glitch where breakable walls that were broken already resurrected.
+Wenting :: Updated the README to include launch instructions and introductions.
+==============================================================
+
+2018-06-07
+--------------------------------------------------------------
+Hasif ::  Worked on glitch that didn't update the game screen when a bomb was placed to break a wall.
+Kerwin :: Updated method in draw that updates game screen to display broken walls.
+Wenting :: Beta tested game to check for final bugs. Drafted algo for choosing the closest enemy (when walls are involved) in AI movement. Updated README and necessary documents to reflect current game controls and contents.
 ==============================================================
 
