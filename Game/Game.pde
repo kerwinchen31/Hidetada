@@ -9,11 +9,13 @@ int c1,c2,c3;
 int c4 = 0;
 int c5 = 0;
 int c6 = 0;
-
+int pcount = 4;
+boolean ends;
+int winner;
 void setup() {
   size(600, 600);
   fill(50, 160, 100);
-  
+  ends = false; 
   background(255, 204, 0);
   textSize(32);
   text("Attack of the Vegetables", 90,150);
@@ -86,6 +88,21 @@ void setup() {
 }
 
 void draw() {
+    if(pcount <= 1){
+      pcount -= 1;
+    }
+    if(pcount == -100){
+      ends = true; 
+      
+    }
+    if(ends == true){
+      background(0);
+      textSize(45);
+      fill(0,0,255);
+      text("Winner:",5,100);
+      text("Game Over",5,300);
+      text("Press G to Restart",5,500);
+    } else {
     if(start == 2){
     background(0);
     textSize(45);
@@ -266,7 +283,7 @@ void draw() {
   
   fill(255,255,255);
   for(int i = 0; i < breakable.size(); i += 2){
-      rect(breakable.get(i),breakable.get(i+1),50,50);
+      rect(breakable.get(i) ,breakable.get(i+1) ,50,50);
   }
   
   fill(0,0,255);
@@ -280,9 +297,10 @@ void draw() {
   rect(365,5,50,50);
   
   for(int j = 0;j < players.length; j++){
+   
     if(players[j].getLife() <= 0){
       players[j].die();
-     
+      pcount -= 1;
     } else {
      players[j].update(players); 
      
@@ -306,8 +324,15 @@ void draw() {
    players[3].updateCPU(players[3],players); 
     }
   }
+  if(pcount == 0 || pcount == 1){
+    pcount -= 1;
+    game = false; 
+  } else {
+    pcount = 4;
   }
-  
+  }
+   
+    }
 }
 
 
@@ -472,10 +497,11 @@ void keyPressed(){
   /////////////////////////////////////////////
   
   ///////////////////////////////////
-  if (game == true){
+  if (game == true || ends == true){
   if(key == 'g'){
     start = 0;
     game = false;
+    ends = false; 
     c4 = 0;
     c5 = 0;
     c6 = 0;
